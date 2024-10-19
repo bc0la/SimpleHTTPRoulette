@@ -80,19 +80,19 @@ func fetchSimpleHTTPServerURLs(apiKey string) ([]string, error) {
 
 func startShodanQuery(apiKey string) {
 	// Run the Shodan query immediately the first time
-	//log.Println("Querying Shodan for SimpleHTTPServer URLs...")
-	// urls, err := fetchSimpleHTTPServerURLs(apiKey)
-	// if err != nil {
-	// 	log.Printf("Error querying Shodan API: %v", err)
-	// } else {
-	// 	// Write the URLs to the urls.txt file
-	// 	err = overwriteURLsFile("urls.txt", urls)
-	// 	if err != nil {
-	// 		log.Printf("Error writing URLs to file: %v", err)
-	// 	} else {
-	// 		log.Printf("Successfully wrote %d URLs to urls.txt", len(urls))
-	// 	}
-	// }
+//	log.Println("Querying Shodan for SimpleHTTPServer URLs...")
+//	 urls, err := fetchSimpleHTTPServerURLs(apiKey)
+//	 if err != nil {
+//	 	log.Printf("Error querying Shodan API: %v", err)
+//	 } else {
+//	 	// Write the URLs to the urls.txt file
+//	 	err = overwriteURLsFile("urls.txt", urls)
+//	 	if err != nil {
+//	 		log.Printf("Error writing URLs to file: %v", err)
+//	 	} else {
+//	 		log.Printf("Successfully wrote %d URLs to urls.txt", len(urls))
+//	 	}
+//	 }
 
 	// Set up the ticker to query every minute after the first run
 	ticker := time.NewTicker(768 * time.Hour)
@@ -320,6 +320,6 @@ func main() {
 	http.HandleFunc("/shuffle", shuffleHandler)
 
 	// Start the server
-	fmt.Println("Server started at http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println("Server started at http://localhost:80")
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
